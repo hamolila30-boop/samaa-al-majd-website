@@ -262,3 +262,30 @@ footer.site-footer{display:block;padding:46px 5.5vw 30px;background:#050505}
 @media(max-width:1000px){.site-footer .footer-bottom{align-items:flex-start;flex-direction:column;gap:12px}}
 @media(max-width:760px){footer.site-footer{padding:36px 6vw 28px}.site-footer .footer-main{grid-template-columns:1fr;gap:28px}.site-footer .footer-navigation{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 32px;width:100%}.site-footer .footer-bottom{margin-top:28px;padding-top:20px}.site-footer .footer-legal{column-gap:6px}.site-footer .footer-legal a{font-size:.68rem}}
 @media(prefers-reduced-motion:reduce){.site-footer .footer-navigation a{transition:none}}
+
+/* Additive jurisdiction feedback inside the existing calculator only. */
+#calculator .cost-map{max-width:323px;margin:32px 0 0}
+#calculator .cost-map .cost-map-label{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#92701e;margin:0 0 14px}
+#calculator .cost-map svg{display:block;width:100%;height:auto}
+#calculator .cost-map path{fill:#dedacf;stroke:var(--paper);stroke-width:.5;stroke-linejoin:round;transition:fill .3s ease,stroke .3s ease}
+#calculator .cost-map path.is-selected{fill:var(--gold);stroke:#ad8d38;stroke-width:.55}
+#calculator .cost-map figcaption{font-size:.76rem;line-height:1.6;color:var(--navy);margin-top:14px;padding-top:12px;border-top:1px solid #ded7c6}
+#calculator .cost-map small{display:block;margin-top:7px;font-size:.65rem;color:#72706a}
+#calculator .cost-map a{color:inherit;text-decoration:none}
+#calculator .cost-map a:hover{text-decoration:underline;text-underline-offset:3px}
+#calculator .cost-map a:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+#calculator .cost-guidance-disclaimer{font-size:.73rem;line-height:1.75;color:var(--muted);border-top:1px solid #e6e2d9;padding-top:18px;margin:22px 0 0}
+@media(max-width:760px){#calculator .cost-map{display:grid;grid-template-columns:54% 1fr;align-items:center;column-gap:14px;max-width:none;margin-top:22px}#calculator .cost-map .cost-map-label{grid-column:1/-1;margin-bottom:8px}#calculator .cost-map svg{width:100%}#calculator .cost-map figcaption{margin-top:0;padding-top:0;border-top:0;font-size:.72rem}#calculator .cost-map small{font-size:.625rem}}
+@media(prefers-reduced-motion:reduce){#calculator .cost-map path{transition:none}}
+
+/* Stationary decorative lights, isolated from the Hero and assessment controls. */
+.visa-section{position:relative;isolation:isolate}
+.visa-section>.visa-grid{position:relative;z-index:1}
+.visa-section>.visa-lights{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.visa-section .visa-light{position:absolute;display:block;width:var(--light-size);height:var(--light-size);border-radius:50%;background:radial-gradient(circle,#fff1bc 0 22%,#e6c363 48%,var(--gold) 100%);box-shadow:0 0 3px rgba(202,165,65,.25);opacity:.12}
+.visa-section .visa-light-twinkle{box-shadow:0 0 5px 1px rgba(225,185,76,.32);--sparkle-size:8px}
+.visa-section .visa-light-twinkle::before,.visa-section .visa-light-twinkle::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none}
+.visa-section .visa-light-twinkle::before{width:var(--sparkle-size);height:1px;background:linear-gradient(90deg,transparent,#edcc79,transparent)}
+.visa-section .visa-light-twinkle::after{width:1px;height:var(--sparkle-size);background:linear-gradient(transparent,#edcc79,transparent)}
+.visa-section .visa-light-accent{--sparkle-size:10px;background:#ffe7a0;box-shadow:0 0 6px 1px rgba(234,195,90,.4)}
+@media(max-width:760px){.visa-section>.visa-lights{opacity:.55}.visa-section .visa-light:nth-child(n+13){display:none}}
